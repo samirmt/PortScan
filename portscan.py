@@ -1,30 +1,35 @@
 # -*- coding: UTF-8 -*-
 import socket
 import colorama
+import sys
 from datetime import datetime
 from os import system
-from colorama import Fore, Back, Style
+from colorama import Fore
 colorama.init()
 
-system("cls")
+system('clear')
 
-msg =       "#######                        ##        ######\n"                                            
-msg = msg + "########                       ##       ## ####\n"                                            
-msg = msg + "##    #                        ##      ##    ##\n"
-msg = msg + "##    #   ######   ### ####  ########  ##     #    #######  ######   ########\n"               
-msg = msg + "##   ##  ##   ##     ###  #    ##       ####     ##    ##       ##    ##   #\n"               
-msg = msg + "######   #     ##    ##        ##        #####   ##     #    #####    #    #\n"               
-msg = msg + "##       #      #    #         ##            ##  #         #######    #    #\n"               
-msg = msg + "##       ##    ##    #         ##      #     ##  ##        #    ##    #    #\n"               
-msg = msg + "#####     ###  ##   ######      ##  ### ###  ##   ###   ##  ##  ####  ###  ###\n"              
-msg = msg + "#####      #####    #######      #####  ######     ######   ######## ####  ###\n"  
-msg = msg + "******************************************************************* by S2MMERS\n"
+title = """
+##### ##### ##### ##### ##### ##### ###### ###     #    
+#   # #   # #   #   #   #     #     #    # # #     # 
+#   # #   # #   #   #   #     #     #    # #  #    #
+####  #   # ####    #   ####  #     ###### #   #   #
+#     #   # #  #    #      #  #     #    # #    #  #
+#     #   # #   #   #      #  #     #    # #     # #
+#     ##### #   #   #  #####  ##### #    # #     ###
+****************************************************
+:: Escrito por: S2MMERS
+:: Versao: 1.0
+:: https://github.com/samirmt
+****************************************************
+"""
 
-print (msg)
+print (title)
 
 ip = raw_input("Enter IP/Domain: ")
 portlist = [20,21,22,23,25,80,443,445,3389]
 print ("\nScanning %s \n" %(ip))
+print(portlist)
 t1 = datetime.now()
 for port in portlist:
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -37,4 +42,3 @@ t2 = datetime.now()
 total = t2 - t1
 
 print (Fore.WHITE + "\nScan completed in %s" %(total))
-	
