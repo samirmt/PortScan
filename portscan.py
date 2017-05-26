@@ -2,12 +2,22 @@
 import socket
 import colorama
 import sys
+import platform
 from datetime import datetime
 from os import system
 from colorama import Fore
 colorama.init()
 
-system('clear')
+def DetectarSO():
+	so = platform.system()
+	if so == 'Windows':
+		system("cls")
+	elif so == 'Linux':
+		system("clear")
+	else:
+		print "Sistema Operacional não Identificado!"
+
+DetectarSO()
 
 title = """
 ##### ##### ##### ##### ##### ##### ###### ###     #    
